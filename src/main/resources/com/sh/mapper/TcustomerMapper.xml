@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <mapper namespace="com.sh.dao.TcustomerDao">
+  
+      <select id="getById" resultType="Tcustomer" parameterType="Tcustomer" >
+        select * from Tcustomer where id_number=#{id_number} and id_type=#{id_type}
+      </select>
+      
+      <insert id="insert" parameterType="Tcustomer" useGeneratedKeys="true"> 
+      insert into Tcustomer values(null,#{id_type},#{id_number},#{customer_name},#{customer_birthday},#{customer_sex},#{customer_address})
+      </insert>
+      
+      
+    </mapper>
